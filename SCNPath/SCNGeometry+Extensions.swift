@@ -87,7 +87,6 @@ public extension SCNGeometry {
 		if materials.isEmpty {
 			materials.append(SCNGeometry.defaultSCNPathMaterial)
 		}
-		let verts = path
 		if curveDistance < 1 {
 			os_log(.error, "curve distance is too low, minimum value is 1")
 		}
@@ -102,44 +101,41 @@ public extension SCNGeometry {
 		for (index, vert) in path.enumerated() {
 			if index == 0 {
 				// first point
-				directionV = SCNVector3(verts[index + 1].z - vert.z, 0, verts[index + 1].x - vert.x)
+				directionV = SCNVector3(path[index + 1].z - vert.z, 0, vert.x - path[index + 1].x)
 			} else if index < maxIndex {
-				let toThis = (vert - verts[index - 1]).flattened().normalized()
-				let fromThis = (verts[index + 1] - vert).flattened().normalized()
+				let toThis = (vert - path[index - 1]).flattened().normalized()
+				let fromThis = (path[index + 1] - vert).flattened().normalized()
 				angleBent = fromThis.angleChange(to: toThis)
 				let resultant = (toThis + fromThis) / 2
-				directionV = SCNVector3(resultant.z, 0, resultant.x)
+				directionV = SCNVector3(resultant.z, 0, -resultant.x)
 			} else {
 				// last point
-				directionV = SCNVector3(vert.z - verts[index - 1].z, 0, vert.x - verts[index - 1].x)
+				directionV = SCNVector3(vert.z - path[index - 1].z, 0, path[index - 1].x - vert.x)
 			}
 			let addToPoint = directionV.normalized() * (width / 2)
 			if curvePoints > 0, path.count >= index + 2, var bentBy = angleBent {
-				let curvePoints = curvePoints
-				let edge1 = SCNVector3(vert.x - addToPoint.x, vert.y, vert.z + addToPoint.z)
-				let edge2 = SCNVector3(vert.x + addToPoint.x, vert.y, vert.z - addToPoint.z)
-				var bendAround: SCNVector3!
+				let edge1 = vert - addToPoint
+				let edge2 = vert + addToPoint
+				var bendAround = vert - (addToPoint * curveDistance)
 
-				if newTurning(points: Array(verts[(index-1)...(index+1)])) < 0 { // left turn
-					bendAround = SCNVector3(vert.x + addToPoint.x * curveDistance, vert.y, vert.z - addToPoint.z * curveDistance)
+				if newTurning(points: Array(path[(index-1)...(index+1)])) < 0 { // left turn
+					bendAround = vert + (addToPoint * curveDistance)
 					bentBy *= -1
-				} else { // right turn
-					bendAround = SCNVector3(vert.x - addToPoint.x * curveDistance, vert.y, vert.z + addToPoint.z * curveDistance)
 				}
 				for val in 0...Int(curvePoints) {
-					vertices.append(
-						edge2.rotate(about: bendAround, by: (-0.5 + Float(val) / curvePoints) * bentBy)
-					)
-					vertices.append(
-						edge1.rotate(about: bendAround, by: (-0.5 + Float(val) / curvePoints) * bentBy)
-					)
+					vertices.append(edge2.rotate(
+						about: bendAround, by: (-0.5 + Float(val) / curvePoints) * bentBy))
+					vertices.append(edge1.rotate(
+						about: bendAround, by: (-0.5 + Float(val) / curvePoints) * bentBy))
 					addTriangleIndices(indices: &indices, at: UInt32(vertices.count - 2))
+					vertices.append(contentsOf: vertices[(vertices.count - 2)...])
 				}
 			} else {
-				vertices.append(SCNVector3(vert.x + addToPoint.x, vert.y, vert.z - addToPoint.z))
-				vertices.append(SCNVector3(vert.x - addToPoint.x, vert.y, vert.z + addToPoint.z))
+				vertices.append(vert + addToPoint)
+				vertices.append(vert - addToPoint)
 				if index > 0 {
 					addTriangleIndices(indices: &indices, at: UInt32(vertices.count - 2))
+					vertices.append(contentsOf: vertices[(vertices.count - 2)...])
 				}
 			}
 		}
@@ -149,14 +145,12 @@ public extension SCNGeometry {
 			texutreCoords.append(CGPoint(x: 0, y: val / pathLength))
 			texutreCoords.append(CGPoint(x: 1, y: val / pathLength))
 		}
-
 		let src = SCNGeometrySource(vertices: vertices)
 		let textureMap = SCNGeometrySource(textureCoordinates: texutreCoords)
 
 		// assuming the path is just flat for now, even though it can be angled
 		let norm = SCNGeometrySource(normals: [SCNVector3](
-			repeating: SCNVector3(0, 1, 0),
-			count: vertices.count
+			repeating: SCNVector3(0, 1, 0), count: vertices.count
 		))
 
 		// using triangles instead of triangleStrip for better normals
