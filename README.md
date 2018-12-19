@@ -1,6 +1,6 @@
 # ARKit-SCNPath
 
-Navigation seems to be a strong point for people making AR apps. So here's a class to easily create a path in AR along a set of centre points.
+Navigation seems to be a strong point for people making AR apps. So here's a class to easily create a path in AR along a set of centre points. This class can also be used to draw out a racetrack, road for an animated character to follow, or even draw a pentagram on the floor!
 
 I'll be releasing a full tutorial shortly after Xmas on my [Medum page](https://medium.com/@maxxfrazer) on how I made the examples in the below gifs using this Pod and about 30 lines of non boilerplate code.
 

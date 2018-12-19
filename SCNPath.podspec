@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "SCNPath"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "SCNPath lets you create paths for any purpose in AR."
   s.description  = <<-DESC
   					SCNPath lets you create a path from just centre points on the path you want to draw.
