@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		008A74DF21C5879D0066FB87 /* SCNPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008A74DC21C5879D0066FB87 /* SCNPath.swift */; };
+		008A74DF21C5879D0066FB87 /* SCNPathNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008A74DC21C5879D0066FB87 /* SCNPathNode.swift */; };
 		008A74E021C5879D0066FB87 /* SCNGeometry+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008A74DD21C5879D0066FB87 /* SCNGeometry+Extensions.swift */; };
 		008A74E121C5879D0066FB87 /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008A74DE21C5879D0066FB87 /* SCNVector3+Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		0047D21521BB0703006E60A8 /* libSCNPath.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSCNPath.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		008A74DC21C5879D0066FB87 /* SCNPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNPath.swift; sourceTree = "<group>"; };
+		008A74DC21C5879D0066FB87 /* SCNPathNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNPathNode.swift; sourceTree = "<group>"; };
 		008A74DD21C5879D0066FB87 /* SCNGeometry+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Extensions.swift"; sourceTree = "<group>"; };
 		008A74DE21C5879D0066FB87 /* SCNVector3+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,7 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				008A74DD21C5879D0066FB87 /* SCNGeometry+Extensions.swift */,
-				008A74DC21C5879D0066FB87 /* SCNPath.swift */,
+				008A74DC21C5879D0066FB87 /* SCNPathNode.swift */,
 				008A74DE21C5879D0066FB87 /* SCNVector3+Extensions.swift */,
 			);
 			path = SCNPath;
@@ -150,7 +150,7 @@
 			files = (
 				008A74E021C5879D0066FB87 /* SCNGeometry+Extensions.swift in Sources */,
 				008A74E121C5879D0066FB87 /* SCNVector3+Extensions.swift in Sources */,
-				008A74DF21C5879D0066FB87 /* SCNPath.swift in Sources */,
+				008A74DF21C5879D0066FB87 /* SCNPathNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -96,8 +96,7 @@ public extension SCNGeometry {
 		var texutreCoords: [CGPoint] = []
 		let maxIndex = path.count - 1
 		var directionV = SCNVector3Zero
-		//		var addToPoint: SCNVector3
-		var angleBent: Float?
+		var bentBy: Float = 0
 		for (index, vert) in path.enumerated() {
 			if index == 0 {
 				// first point
@@ -105,7 +104,7 @@ public extension SCNGeometry {
 			} else if index < maxIndex {
 				let toThis = (vert - path[index - 1]).flattened().normalized()
 				let fromThis = (path[index + 1] - vert).flattened().normalized()
-				angleBent = fromThis.angleChange(to: toThis)
+				bentBy = fromThis.angleChange(to: toThis)
 				let resultant = (toThis + fromThis) / 2
 				directionV = SCNVector3(resultant.z, 0, -resultant.x)
 			} else {
@@ -113,11 +112,12 @@ public extension SCNGeometry {
 				directionV = SCNVector3(vert.z - path[index - 1].z, 0, path[index - 1].x - vert.x)
 			}
 			let addToPoint = directionV.normalized() * (width / 2)
-			if curvePoints > 0, path.count >= index + 2, var bentBy = angleBent {
+			if curvePoints > 0, path.count >= index + 2, bentBy > 0.001 {
 				let edge1 = vert - addToPoint
 				let edge2 = vert + addToPoint
 				var bendAround = vert - (addToPoint * curveDistance)
 
+				// replace this with quaternions when possible
 				if newTurning(points: Array(path[(index-1)...(index+1)])) < 0 { // left turn
 					bendAround = vert + (addToPoint * curveDistance)
 					bentBy *= -1
@@ -128,14 +128,15 @@ public extension SCNGeometry {
 					vertices.append(edge1.rotate(
 						about: bendAround, by: (-0.5 + Float(val) / curvePoints) * bentBy))
 					addTriangleIndices(indices: &indices, at: UInt32(vertices.count - 2))
-					vertices.append(contentsOf: vertices[(vertices.count - 2)...])
+					// When the normals are added properly, uncomment this line and the same below
+//					vertices.append(contentsOf: vertices[(vertices.count - 2)...])
 				}
 			} else {
 				vertices.append(vert + addToPoint)
 				vertices.append(vert - addToPoint)
 				if index > 0 {
 					addTriangleIndices(indices: &indices, at: UInt32(vertices.count - 2))
-					vertices.append(contentsOf: vertices[(vertices.count - 2)...])
+//					vertices.append(contentsOf: vertices[(vertices.count - 2)...])
 				}
 			}
 		}
@@ -148,7 +149,8 @@ public extension SCNGeometry {
 		let src = SCNGeometrySource(vertices: vertices)
 		let textureMap = SCNGeometrySource(textureCoordinates: texutreCoords)
 
-		// assuming the path is just flat for now, even though it can be angled
+		// assuming the path is just flat for now, even though it can be angled.
+		// the turning part doesn't do anything nice with sloped paths yet.
 		let norm = SCNGeometrySource(normals: [SCNVector3](
 			repeating: SCNVector3(0, 1, 0), count: vertices.count
 		))
