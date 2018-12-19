@@ -95,31 +95,31 @@ public extension SCNGeometry {
 		var indices: [UInt32] = []
 		var texutreCoords: [CGPoint] = []
 		let maxIndex = path.count - 1
-		var directionV = SCNVector3Zero
 		var bentBy: Float = 0
 		for (index, vert) in path.enumerated() {
+			var addVector: SCNVector3!
 			if index == 0 {
 				// first point
-				directionV = SCNVector3(path[index + 1].z - vert.z, 0, vert.x - path[index + 1].x)
+				addVector = SCNVector3(path[index + 1].z - vert.z, 0, vert.x - path[index + 1].x)
 			} else if index < maxIndex {
 				let toThis = (vert - path[index - 1]).flattened().normalized()
 				let fromThis = (path[index + 1] - vert).flattened().normalized()
 				bentBy = fromThis.angleChange(to: toThis)
 				let resultant = (toThis + fromThis) / 2
-				directionV = SCNVector3(resultant.z, 0, -resultant.x)
+				addVector = SCNVector3(resultant.z, 0, -resultant.x)
 			} else {
 				// last point
-				directionV = SCNVector3(vert.z - path[index - 1].z, 0, path[index - 1].x - vert.x)
+				addVector = SCNVector3(vert.z - path[index - 1].z, 0, path[index - 1].x - vert.x)
 			}
-			let addToPoint = directionV.normalized() * (width / 2)
+			addVector = addVector.normalized() * (width / 2)
 			if curvePoints > 0, path.count >= index + 2, bentBy > 0.001 {
-				let edge1 = vert - addToPoint
-				let edge2 = vert + addToPoint
-				var bendAround = vert - (addToPoint * curveDistance)
+				let edge1 = vert - addVector
+				let edge2 = vert + addVector
+				var bendAround = vert - (addVector * curveDistance)
 
 				// replace this with quaternions when possible
 				if newTurning(points: Array(path[(index-1)...(index+1)])) < 0 { // left turn
-					bendAround = vert + (addToPoint * curveDistance)
+					bendAround = vert + (addVector * curveDistance)
 					bentBy *= -1
 				}
 				for val in 0...Int(curvePoints) {
@@ -132,8 +132,8 @@ public extension SCNGeometry {
 //					vertices.append(contentsOf: vertices[(vertices.count - 2)...])
 				}
 			} else {
-				vertices.append(vert + addToPoint)
-				vertices.append(vert - addToPoint)
+				vertices.append(vert + addVector)
+				vertices.append(vert - addVector)
 				if index > 0 {
 					addTriangleIndices(indices: &indices, at: UInt32(vertices.count - 2))
 //					vertices.append(contentsOf: vertices[(vertices.count - 2)...])

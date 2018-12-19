@@ -6,13 +6,13 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
   					SCNPath lets you create a path from just centre points on the path you want to draw.
                    DESC
-  s.homepage     = "https://github.com/maxxfrazer/SceneKit-SCNPath"
+  s.homepage     = "https://github.com/maxxfrazer/ARKit-SCNPath"
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.license      = "MIT"
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.author             = "Max Cobb"
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source       = { :git => "https://github.com/maxxfrazer/SceneKit-SCNPath.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/maxxfrazer/ARKit-SCNPath.git", :tag => "#{s.version}" }
   s.swift_version = '4.2'
   s.ios.deployment_target = '12.0'
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
