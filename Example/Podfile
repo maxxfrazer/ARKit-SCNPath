@@ -1,0 +1,11 @@
+project 'SCNPath+Example.xcodeproj'
+
+platform :ios, '12.0'
+
+target 'SCNPath+Example' do
+  use_frameworks!
+
+  # Pods for SCNPath+Example
+  pod 'FocusNode'
+  pod 'SCNPath'
+end
