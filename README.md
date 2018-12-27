@@ -5,6 +5,8 @@ Functions and classes for creating path geometries in a SceneKit application on 
 [![Version](https://img.shields.io/cocoapods/v/SCNPath.svg)](https://cocoapods.org/pods/SCNPath)
 [![License](https://img.shields.io/cocoapods/l/SCNPath.svg)](https://cocoapods.org/pods/SCNPath)
 [![Platform](https://img.shields.io/cocoapods/p/SCNPath.svg)](https://cocoapods.org/pods/SCNPath)
+[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org/)
+[![CI Status](http://img.shields.io/travis/maxxfrazer/ARKit-SCNPath.svg?style=flat)](https://travis-ci.org/maxxfrazer/ARKit-SCNPath)
 
 ## Introduction
 
