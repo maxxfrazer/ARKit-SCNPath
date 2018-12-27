@@ -59,11 +59,7 @@ class ViewController: UIViewController {
 		super.viewWillAppear(animated)
 
 		let configuration = ARWorldTrackingConfiguration()
-		if Int.random(in: 0...1) == 0 {
-			configuration.planeDetection = [.horizontal, .vertical]
-		} else {
-			configuration.planeDetection = [.horizontal]
-		}
+		configuration.planeDetection = [.horizontal, .vertical]
 
 		sceneView.session.run(configuration)
 	}
