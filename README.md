@@ -2,17 +2,18 @@
 
 Functions and classes for creating path geometries in a SceneKit application on iOS. Main use-case being for ARKit.
 
+
 [![Version](https://img.shields.io/cocoapods/v/SCNPath.svg)](https://cocoapods.org/pods/SCNPath)
 [![License](https://img.shields.io/cocoapods/l/SCNPath.svg)](https://cocoapods.org/pods/SCNPath)
 [![Platform](https://img.shields.io/cocoapods/p/SCNPath.svg)](https://cocoapods.org/pods/SCNPath)
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org/)
-[![CI Status](http://img.shields.io/travis/maxxfrazer/ARKit-SCNPath.svg?style=flat)](https://travis-ci.org/maxxfrazer/ARKit-SCNPath)
+[![Build Status](https://travis-ci.com/maxxfrazer/ARKit-SCNPath.svg?branch=master)](https://travis-ci.com/maxxfrazer/ARKit-SCNPath)
 
 ## Introduction
 
 Navigation seems to be a strong point for people making AR apps. So here's a class to easily create a path in AR along a set of centre points. This class can also be used to draw out a racetrack, road for an animated character to follow, or even draw a pentagram on the floor!
 
-I'll be releasing a full tutorial shortly after Xmas on my [Medum page](https://medium.com/@maxxfrazer) on how I made the examples in the below gifs using this Pod and about 30 lines of non boilerplate code.
+[Check out the full tutorial on Medium](https://medium.com/@maxxfrazer/arkit-pods-scnpath-d4b491803019) on how I made the examples in the below gifs using this Pod and about 30 lines of non boilerplate code.
 
 Please feel free to use and contribute this library however you like.
 I only ask that you let me know when you're doing so, so I can see some cool uses of it!

@@ -34,7 +34,6 @@ class ViewController: UIViewController {
 
 		// Set the view's delegate
 		self.sceneView.delegate = self
-		self.sceneView.autoenablesDefaultLighting = true
 
 		self.focusSquare.viewDelegate = self.sceneView
 		self.sceneView.scene.rootNode.addChildNode(self.focusSquare)
