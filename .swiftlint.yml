@@ -1,0 +1,10 @@
+excluded:
+  - Example
+  - Pods
+variable_name:
+  min_length:
+    warning: 1
+function_body_length:
+  warning: 60
+cyclomatic_complexity:
+  warning: 12
