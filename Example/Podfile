@@ -7,5 +7,5 @@ target 'SCNPath+Example' do
 
   # Pods for SCNPath+Example
   pod 'FocusNode'
-  pod 'SCNPath'
+  pod 'SCNPath', path: '../'
 end

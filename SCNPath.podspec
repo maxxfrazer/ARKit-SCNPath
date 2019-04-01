@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.platform              = :ios, '12.0'
   s.swift_version         = '4.2'
   s.frameworks            = 'SceneKit'
-  s.source_files          = "SCNPath/*.swift"
+  s.source_files          = "SCNPath/*.swift", ".swiftlint.yml"
 end

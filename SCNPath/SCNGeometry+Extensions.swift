@@ -75,7 +75,7 @@ public extension SCNGeometry {
 	///       default to 8. 0 will make sharp corners.
 	///   - materials: Materials to be used on the geometry. Only the first will be read.
 	/// - Returns: A new SCNGeometry representing the path for use with any SceneKit Application.
-	public class func path(
+	class func path(
 		path: [SCNVector3], width: Float = 0.5,
 		curvePoints: Float = 8, materials: [SCNMaterial] = [],
 		curveDistance: Float = 1.5

@@ -101,7 +101,7 @@
 				TargetAttributes = {
 					0047D21421BB0703006E60A8 = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -111,6 +111,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 0047D20C21BB0703006E60A8;
 			productRefGroup = 0047D21621BB0703006E60A8 /* Products */;
@@ -139,7 +140,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, install with `brew install swiftlint`\"\nfi\n";
+			shellScript = "#!/bin/sh\nif which swiftlint >/dev/null; then\n swiftlint\nelse\necho \"warning: SwiftLint not installed, install with `brew install swiftlint`\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -288,7 +289,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -307,7 +308,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
