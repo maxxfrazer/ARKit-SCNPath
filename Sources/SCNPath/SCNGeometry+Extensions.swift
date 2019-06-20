@@ -88,7 +88,11 @@ public extension SCNGeometry {
 			materials.append(SCNGeometry.defaultSCNPathMaterial)
 		}
 		if curveDistance < 1 {
-			os_log(.error, "curve distance is too low, minimum value is 1")
+      if #available(iOS 12.0, *) {
+        os_log(.error, "curve distance is too low, minimum value is 1")
+      } else {
+        fatalError("curve distance is too low, minimum value is 1")
+      }
 		}
 		let curveDistance = max(curveDistance, 1)
 		var vertices: [SCNVector3] = []
