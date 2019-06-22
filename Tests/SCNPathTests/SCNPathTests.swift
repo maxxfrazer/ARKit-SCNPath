@@ -1,5 +1,5 @@
 import XCTest
-@testable import ARKit_SCNPath
+@testable import SCNPath
 
 final class ARKit_SCNPathTests: XCTestCase {
     func testExample() {
