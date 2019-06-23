@@ -1,11 +1,12 @@
 # ARKit-SCNPath
 
 Functions and classes for creating path geometries in a SceneKit application on iOS. Main use-case being for ARKit.
-
+I'm hoping to add RealityKit support once it is possible to generate meshes. (If anyone knows a way how, please let me know!)
 
 [![Version](https://img.shields.io/cocoapods/v/SCNPath.svg)](https://cocoapods.org/pods/SCNPath)
 [![License](https://img.shields.io/cocoapods/l/SCNPath.svg)](https://cocoapods.org/pods/SCNPath)
 [![Platform](https://img.shields.io/cocoapods/p/SCNPath.svg)](https://cocoapods.org/pods/SCNPath)
+[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-v1.2.0-orange.svg?style=flat)](https://github.com/apple/swift-package-manager)
 [![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org/)
 [![Build Status](https://travis-ci.com/maxxfrazer/ARKit-SCNPath.svg?branch=master)](https://travis-ci.com/maxxfrazer/ARKit-SCNPath)
 
@@ -18,15 +19,23 @@ Navigation seems to be a strong point for people making AR apps. So here's a cla
 Please feel free to use and contribute this library however you like.
 I only ask that you let me know when you're doing so, so I can see some cool uses of it!
 
+## Requirements
+- Swift 5.0
+- iOS 11.0
+
+## Compatability
+- [x] SceneKit
+- [ ] RealityKit
+
 ## Example
 
 It's as easy as this to make a node with this path as a geometry:
 
 ```
 let pathNode = SCNPathNode(path: [
-	SCNVector3(0,-1,0),
-	SCNVector3(0,-1,-1),
-	SCNVector3(1,-1,-1)
+	SCNVector3(0, -1, 0),
+	SCNVector3(0, -1, -1),
+	SCNVector3(1, -1, -1)
 ])
 ```
 
@@ -34,9 +43,9 @@ Alternatively, you can grab the geometry directly:
 
 ```
 let pathGeometry = SCNGeometry.path(path: [
-	SCNVector3(0,-1,0),
-	SCNVector3(0,-1,-1),
-	SCNVector3(1,-1,-1)
+	SCNVector3(0, -1, 0),
+	SCNVector3(0, -1, -1),
+	SCNVector3(1, -1, -1)
 ])
 ```
 

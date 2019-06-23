@@ -8,5 +8,6 @@ script:
   - gem install travis --no-document
   - travis lint .travis.yml --no-interactive
   - swiftlint
-  - xcodebuild clean build -project SCNPath.xcodeproj -scheme SCNPath -destination "platform=iOS Simulator,name=iPhone X" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+  - swift package generate-xcodeproj
+  - xcodebuild clean build -project SCNPath.xcodeproj -scheme SCNPath-Package -destination "platform=iOS Simulator,name=iPhone Xs" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
   - pod lib lint
