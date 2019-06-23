@@ -11,15 +11,13 @@ let package = Package(
   products: [
     .library(
       name: "SCNPath",
-      targets: ["SCNPath"]),
+      targets: ["SCNPath"])
   ],
   targets: [
     // No tests created just yet.
-    .target(
-      name: "SCNPath",
-      dependencies: []),
+    .target(name: "SCNPath"),
     .testTarget(
       name: "SCNPathTests",
-      dependencies: ["SCNPath"]),
+      dependencies: ["SCNPath"])
   ]
 )
