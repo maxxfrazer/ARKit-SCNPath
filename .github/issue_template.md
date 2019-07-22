@@ -1,7 +1,5 @@
 ---
-name: Issue/Bug
-about: Describe this issue template's purpose here.
-title: ''
+title: Issue/Bug
 labels: ''
 assignees: maxxfrazer
 
