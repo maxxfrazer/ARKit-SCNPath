@@ -5,9 +5,7 @@ import PackageDescription
 
 let package = Package(
   name: "SCNPath",
-  platforms: [
-    .iOS(.v11)
-  ],
+  platforms: [.iOS("9.3")],
   products: [
     .library(
       name: "SCNPath",
@@ -19,5 +17,6 @@ let package = Package(
     .testTarget(
       name: "SCNPathTests",
       dependencies: ["SCNPath"])
-  ]
+  ],
+  swiftLanguageVersions: [.v5]
 )
