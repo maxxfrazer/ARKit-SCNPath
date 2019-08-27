@@ -14,7 +14,7 @@ jobs:
         ./install_swiftlint.sh
         swiftlint
         swift package generate-xcodeproj
-        xcodebuild clean build -project $PROJECT -scheme $SCHEME -destination $DESTINATION CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+        xcodebuild clean build -project $PROJECT -scheme $SCHEME -destination "$DESTINATION" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
       env:
         PROJECT: SCNPath.xcodeproj
         SCHEME: SCNPath-Package
