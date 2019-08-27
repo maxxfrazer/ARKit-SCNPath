@@ -8,7 +8,7 @@ I'm hoping to add RealityKit support once it is possible to generate meshes. (If
 [![Platform](https://img.shields.io/cocoapods/p/SCNPath.svg)](https://cocoapods.org/pods/SCNPath)
 [![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-v1.2.0-orange.svg?style=flat)](https://github.com/apple/swift-package-manager)
 [![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org/)
-[![Actions Status](https://github.com/maxxfrazer/ARKit-SCNPath/workflows/swift-build/badge.svg)](https://github.com/maxxfrazer/ARKit-SCNPath/actions)
+[![Actions Status](https://github.com/maxxfrazer/ARKit-SCNPath/workflows/CI/badge.svg)](https://github.com/maxxfrazer/ARKit-SCNPath/actions)
 
 ## Introduction
 
