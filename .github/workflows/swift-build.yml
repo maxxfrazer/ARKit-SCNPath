@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - '*'
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run Build
+      run: |
+        ./install_swiftlint.sh
+        swiftlint
+        swift package generate-xcodeproj
+        xcodebuild clean build -project $PROJECT -scheme $SCHEME -destination "$DESTINATION" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+      env:
+        PROJECT: SCNPath.xcodeproj
+        SCHEME: SCNPath-Package
+        DESTINATION: platform=iOS Simulator,name=iPhone Xs
