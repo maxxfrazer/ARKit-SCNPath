@@ -19,11 +19,14 @@ Navigation seems to be a strong point for people making AR apps. So here's a cla
 Please feel free to use and contribute this library however you like.
 I only ask that you let me know when you're doing so, so I can see some cool uses of it!
 
+If you're having issues with Swift Package dependencies there's some great resources online:
+https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app
+
 ## Requirements
 - Swift 5.0
 - iOS 11.0
 
-## Compatability
+## Compatibility
 - [x] SceneKit
 - [ ] RealityKit
 
@@ -62,8 +65,8 @@ Other parameters that can be passed into both the SCNPathNode class and the SCNG
 | curveDistance | distance from the centre of the curve as a multiple of half the width to set the corner radius. Minimum value is 1. | 1.5                | 2       |
 
 
-Here's some basic examples of what you can do with this Pod:
+Here's some basic examples of what you can do with this Package:
 
-![Path Example 1](https://github.com/maxxfrazer/ARKit-SCNPathNode/blob/master/media/path-example-1.gif)
-![Path Example Texture Repeating](https://github.com/maxxfrazer/ARKit-SCNPathNode/blob/master/media/path-example-2.gif)
-![Path Example Creating](https://github.com/maxxfrazer/ARKit-SCNPathNode/blob/master/media/path-example-3.gif)
+![Path Example 1](https://github.com/maxxfrazer/ARKit-SCNPath/blob/master/media/path-example-1.gif)
+![Path Example Texture Repeating](https://github.com/maxxfrazer/ARKit-SCNPath/blob/master/media/path-example-2.gif)
+![Path Example Creating](https://github.com/maxxfrazer/ARKit-SCNPath/blob/master/media/path-example-3.gif)
