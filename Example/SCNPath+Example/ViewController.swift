@@ -8,7 +8,7 @@
 
 import ARKit
 import FocusNode
-import SCNPath
+//import SCNPath
 import SmartHitTest
 
 extension ARSCNView: ARSmartHitTest {}

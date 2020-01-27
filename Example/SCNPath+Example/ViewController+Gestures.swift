@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SCNPath
+//import SCNPath
 
 extension ViewController: UIGestureRecognizerDelegate {
 	func setupGestures() {

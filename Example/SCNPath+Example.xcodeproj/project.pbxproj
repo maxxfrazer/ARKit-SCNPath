@@ -14,10 +14,10 @@
 		0046B24621D55F0C0047E83D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0046B24421D55F0C0047E83D /* LaunchScreen.storyboard */; };
 		0046B24F21D55F8E0047E83D /* ViewController+Occlusions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0046B24D21D55F8E0047E83D /* ViewController+Occlusions.swift */; };
 		0046B25021D55F8E0047E83D /* ViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0046B24E21D55F8E0047E83D /* ViewController+Gestures.swift */; };
+		AFFC8A9C23DF54FE00D4290B /* FocusNode in Frameworks */ = {isa = PBXBuildFile; productRef = AFFC8A9B23DF54FE00D4290B /* FocusNode */; };
 		F38246AD238D28F8003C2D6A /* SCNGeometry+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38246AA238D28F8003C2D6A /* SCNGeometry+Extensions.swift */; };
 		F38246AE238D28F8003C2D6A /* SCNPathNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38246AB238D28F8003C2D6A /* SCNPathNode.swift */; };
 		F38246AF238D28F8003C2D6A /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38246AC238D28F8003C2D6A /* SCNVector3+Extensions.swift */; };
-		F38246B2238D293D003C2D6A /* FocusNode in Frameworks */ = {isa = PBXBuildFile; productRef = F38246B1238D293D003C2D6A /* FocusNode */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F38246B2238D293D003C2D6A /* FocusNode in Frameworks */,
+				AFFC8A9C23DF54FE00D4290B /* FocusNode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +115,7 @@
 			);
 			name = "SCNPath+Example";
 			packageProductDependencies = (
-				F38246B1238D293D003C2D6A /* FocusNode */,
+				AFFC8A9B23DF54FE00D4290B /* FocusNode */,
 			);
 			productName = "SCNPath+Example";
 			productReference = 0046B23721D55F0B0047E83D /* SCNPath+Example.app */;
@@ -146,7 +146,7 @@
 			);
 			mainGroup = 0046B22E21D55F0B0047E83D;
 			packageReferences = (
-				F38246B0238D293D003C2D6A /* XCRemoteSwiftPackageReference "ARKit-FocusNode" */,
+				AFFC8A9A23DF54FE00D4290B /* XCRemoteSwiftPackageReference "ARKit-FocusNode" */,
 			);
 			productRefGroup = 0046B23821D55F0B0047E83D /* Products */;
 			projectDirPath = "";
@@ -375,7 +375,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F38246B0238D293D003C2D6A /* XCRemoteSwiftPackageReference "ARKit-FocusNode" */ = {
+		AFFC8A9A23DF54FE00D4290B /* XCRemoteSwiftPackageReference "ARKit-FocusNode" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/maxxfrazer/ARKit-FocusNode.git";
 			requirement = {
@@ -386,9 +386,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F38246B1238D293D003C2D6A /* FocusNode */ = {
+		AFFC8A9B23DF54FE00D4290B /* FocusNode */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F38246B0238D293D003C2D6A /* XCRemoteSwiftPackageReference "ARKit-FocusNode" */;
+			package = AFFC8A9A23DF54FE00D4290B /* XCRemoteSwiftPackageReference "ARKit-FocusNode" */;
 			productName = FocusNode;
 		};
 /* End XCSwiftPackageProductDependency section */
