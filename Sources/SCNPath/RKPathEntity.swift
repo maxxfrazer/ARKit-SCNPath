@@ -42,109 +42,53 @@ public class RKPathEntity : SCNPathNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-
     
 
-    
-    func makePathSegment(length: Float, width: Float = 0.35) -> Entity {
-        let pivotPoint = Entity()
-        let rectangleMesh = MeshResource.generatePlane(width: width, depth: length + width, cornerRadius: width / 2)
-        let generatedRectangle = ModelEntity(mesh: rectangleMesh,
-                                             materials: [SimpleMaterial.init(color: pathColor, isMetallic: false)])
-        pivotPoint.addChild(generatedRectangle)
-        
-        //This shape can be broken down into 3 parts: 1 rectangle of length length, and 2 ends that are half-circles of radius pathWidth / 2.
-        //Put the center of the half-circle at one end of the rectangle at the center of the pivot point; We want each path to overlap on the half-circle tips.
-        let zPosition = (-(length + width) / 2) + (width / 2)
-        
-        
-        generatedRectangle.position = [0,0,zPosition]
-        return pivotPoint
-    }
-    
-    
     override func recalcGeometry() {
-        guard realityKitPath.isAnchored
-        else {return}
+        super.recalcGeometry()
         
-        //Start off with just a circle for the first position.
-        if self.path.count == 1 {
-            let pathSegment = makePathSegment(length: 0)
-            let newPosition = path[0].getSIMD3Float()
-            realityKitPath.anchor!.addChild(pathSegment)
-            pathEntitiesInScene.append(pathSegment)
-            pathSegment.position = newPosition
-            return
-        }
-        //Using a smaller distance between points on a curve will lead to smoother curves.
-        
-        //Keep all y-values the same so that the ends don't protrude in the y-dimension (looks more like disjointed shapes than one continouous path).
-        let currentIndex = (path.count - 1)
-        let lastPosition : SIMD3<Float> = [path[currentIndex - 1].getSIMD3Float().x,
-                            path[0].y,
-                            path[currentIndex - 1].getSIMD3Float().z]
-        let newPosition : SIMD3<Float> = [path[currentIndex].getSIMD3Float().x,
-                                          lastPosition.y,
-                           path[currentIndex].getSIMD3Float().z]
-        let length = simd_length(newPosition - lastPosition)
-        let pathSegment = makePathSegment(length: length)
-        realityKitPath.anchor!.addChild(pathSegment)
-        pathEntitiesInScene.append(pathSegment)
-        pathSegment.position = lastPosition
-        
-        //Rotate the rectangle to connect the dots.
-        // --(lastPosition is already at one end of the rectangle, rotate to put newPosition at the other end).
-        pathSegment.look(at: newPosition, from: lastPosition, relativeTo: realityKitPath.anchor!)
-    }
- 
-    
-    
-    
-    //This implementation is for when we are converting SCNScene to .usdz, Not for when we are generating the path from within RealityKit.
-   // override func recalcGeometry() {
-        //super.recalcGeometry()
-
-        //if we didn't use a different file path each time, the model would Not change.
-        //makeRKGeo(path: "rkPath\(entityCount).usdz")
-        //entityCount += 1
-        
-        //Delete the old usdz files we saved to the device.
+        ///Delete the old usdz files we saved to the device.
         //let appDelegate = UIApplication.shared.delegate as! AppDelegate
         //appDelegate.deleteTemporaryDirectory()
-    //}
-    
-    
-    ///Make a .usdz file from the SceneKit scene that includes the SceneKit path so that we can use it in RealitKit.
-//    private func makeRKGeo(path : String){
-//        let url = FileManager.default.temporaryDirectory
-//        let finalURL = url.appendingPathComponent(path)
-//        scene?.write(to: finalURL, delegate: nil, progressHandler: {
-//            completion,error,unsafe  in
-//            print("completion:", completion)
-//        })
-//        loadEntity(fromURL: finalURL)
-//    }
+
+        //if we didn't use a different file path each time, the model would Not change.
+        makeRKGeo(path: "rkPath\(entityCount).usdz")
+        entityCount += 1
         
-    ///Load the .usdz file as a RealityKit Entity
-//    private func loadEntity(fromURL url: URL){
-//        var cancellable: AnyCancellable? = nil
-//        cancellable = Entity.loadAsync(contentsOf: url)
-//            .sink(receiveCompletion: { completion in
-//                cancellable?.cancel()
-//            }, receiveValue: { (loadedEntity: Entity) in
-//                self.didLoadNewUSDZModel(model: loadedEntity)
-//                cancellable?.cancel()
-//            })
-//    }
+    }
     
     
-    ///When the new .usdz file has loaded, update realityKitPath to have the same mesh and material.
-//    private func didLoadNewUSDZModel(model: Entity) {
-//        print("didLoadNewUSDZModel", model)
-//
-//        //The mesh and material of the rkPath now update to be the same as the generated SCN geometry.
-//        self.realityKitPath.components[ModelComponent.self] = model.findModelEntity()?.model
-//    }
+    //Make a .usdz file from the SceneKit scene that includes the SceneKit path so that we can use it in RealitKit.
+    private func makeRKGeo(path : String){
+        let url = FileManager.default.temporaryDirectory
+        let finalURL = url.appendingPathComponent(path)
+        scene?.write(to: finalURL, delegate: nil, progressHandler: {
+            completion,error,unsafe  in
+            print("completion:", completion)
+        })
+        loadEntity(fromURL: finalURL)
+    }
+        
+    //Load the .usdz file as a RealityKit Entity
+    private func loadEntity(fromURL url: URL){
+        var cancellable: AnyCancellable? = nil
+        cancellable = Entity.loadAsync(contentsOf: url)
+            .sink(receiveCompletion: { completion in
+                cancellable?.cancel()
+            }, receiveValue: { (loadedEntity: Entity) in
+                self.didLoadNewUSDZModel(model: loadedEntity)
+                cancellable?.cancel()
+            })
+    }
+    
+    
+    //When the new .usdz file has loaded, update realityKitPath to have the same mesh and material.
+    private func didLoadNewUSDZModel(model: Entity) {
+        print("didLoadNewUSDZModel", model)
+
+        //The mesh and material of the rkPath now update to be the same as the generated SCN geometry.
+        self.realityKitPath.components[ModelComponent.self] = model.findHasModel()?.model
+    }
     
     
     
