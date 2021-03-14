@@ -28,7 +28,7 @@ https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_y
 
 ## Compatibility
 - [x] SceneKit
-- [ ] RealityKit
+- [x] RealityKit
 
 ## Example
 
