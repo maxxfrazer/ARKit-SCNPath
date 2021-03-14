@@ -26,7 +26,7 @@ class RKViewController: UIViewController{
 		}
 	}
 
-	var pathNode = RealityKitPathEntity(path: [])
+	var pathNode = RKPathEntity(path: [])
 
 
 	override func viewDidLoad() {
