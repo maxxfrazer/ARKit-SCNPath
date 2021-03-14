@@ -14,15 +14,16 @@
 		0046B24621D55F0C0047E83D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0046B24421D55F0C0047E83D /* LaunchScreen.storyboard */; };
 		0046B24F21D55F8E0047E83D /* ViewController+Occlusions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0046B24D21D55F8E0047E83D /* ViewController+Occlusions.swift */; };
 		0046B25021D55F8E0047E83D /* ViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0046B24E21D55F8E0047E83D /* ViewController+Gestures.swift */; };
-		55FC326325FDB106006D333A /* RKPathEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC326225FDB106006D333A /* RKPathEntity.swift */; };
+		5532CC0525FDC59600C90CEE /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532CC0025FDC59600C90CEE /* SCNVector3+Extensions.swift */; };
+		5532CC0725FDC59600C90CEE /* SCNGeometry+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532CC0225FDC59600C90CEE /* SCNGeometry+Extensions.swift */; };
+		5532CC0825FDC59600C90CEE /* RKPathEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532CC0325FDC59600C90CEE /* RKPathEntity.swift */; };
+		5532CC0925FDC59600C90CEE /* SCNPathNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532CC0425FDC59600C90CEE /* SCNPathNode.swift */; };
+		5532CC1725FDC93900C90CEE /* ShapesProj.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 5532CC1625FDC93900C90CEE /* ShapesProj.rcproject */; };
 		55FC326925FDB134006D333A /* RKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC326625FDB134006D333A /* RKViewController.swift */; };
 		55FC326A25FDB134006D333A /* RKViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC326725FDB134006D333A /* RKViewController+Gestures.swift */; };
 		55FC326B25FDB134006D333A /* RKViewController+Occlusions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC326825FDB134006D333A /* RKViewController+Occlusions.swift */; };
 		55FC327125FDB1FD006D333A /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 55FC327025FDB1FD006D333A /* FocusEntity */; };
 		AFFC8A9C23DF54FE00D4290B /* FocusNode in Frameworks */ = {isa = PBXBuildFile; productRef = AFFC8A9B23DF54FE00D4290B /* FocusNode */; };
-		F38246AD238D28F8003C2D6A /* SCNGeometry+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38246AA238D28F8003C2D6A /* SCNGeometry+Extensions.swift */; };
-		F38246AE238D28F8003C2D6A /* SCNPathNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38246AB238D28F8003C2D6A /* SCNPathNode.swift */; };
-		F38246AF238D28F8003C2D6A /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38246AC238D28F8003C2D6A /* SCNVector3+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,13 +36,14 @@
 		0046B24721D55F0C0047E83D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0046B24D21D55F8E0047E83D /* ViewController+Occlusions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Occlusions.swift"; sourceTree = "<group>"; };
 		0046B24E21D55F8E0047E83D /* ViewController+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Gestures.swift"; sourceTree = "<group>"; };
-		55FC326225FDB106006D333A /* RKPathEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RKPathEntity.swift; path = ../../../Sources/SCNPath/RKPathEntity.swift; sourceTree = "<group>"; };
+		5532CC0025FDC59600C90CEE /* SCNVector3+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extensions.swift"; sourceTree = "<group>"; };
+		5532CC0225FDC59600C90CEE /* SCNGeometry+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Extensions.swift"; sourceTree = "<group>"; };
+		5532CC0325FDC59600C90CEE /* RKPathEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKPathEntity.swift; sourceTree = "<group>"; };
+		5532CC0425FDC59600C90CEE /* SCNPathNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNPathNode.swift; sourceTree = "<group>"; };
+		5532CC1625FDC93900C90CEE /* ShapesProj.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = ShapesProj.rcproject; sourceTree = "<group>"; };
 		55FC326625FDB134006D333A /* RKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKViewController.swift; sourceTree = "<group>"; };
 		55FC326725FDB134006D333A /* RKViewController+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RKViewController+Gestures.swift"; sourceTree = "<group>"; };
 		55FC326825FDB134006D333A /* RKViewController+Occlusions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RKViewController+Occlusions.swift"; sourceTree = "<group>"; };
-		F38246AA238D28F8003C2D6A /* SCNGeometry+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCNGeometry+Extensions.swift"; path = "../Sources/SCNPath/SCNGeometry+Extensions.swift"; sourceTree = SOURCE_ROOT; };
-		F38246AB238D28F8003C2D6A /* SCNPathNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCNPathNode.swift; path = ../Sources/SCNPath/SCNPathNode.swift; sourceTree = SOURCE_ROOT; };
-		F38246AC238D28F8003C2D6A /* SCNVector3+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCNVector3+Extensions.swift"; path = "../Sources/SCNPath/SCNVector3+Extensions.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +88,7 @@
 				0046B24221D55F0C0047E83D /* Assets.xcassets */,
 				0046B24421D55F0C0047E83D /* LaunchScreen.storyboard */,
 				0046B24721D55F0C0047E83D /* Info.plist */,
-				F38246A9238D28EA003C2D6A /* SCNPath */,
+				5532CBFF25FDC59600C90CEE /* SCNPath */,
 			);
 			path = "SCNPath+Example";
 			sourceTree = "<group>";
@@ -98,6 +100,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5532CBFF25FDC59600C90CEE /* SCNPath */ = {
+			isa = PBXGroup;
+			children = (
+				5532CC1625FDC93900C90CEE /* ShapesProj.rcproject */,
+				5532CC0025FDC59600C90CEE /* SCNVector3+Extensions.swift */,
+				5532CC0225FDC59600C90CEE /* SCNGeometry+Extensions.swift */,
+				5532CC0325FDC59600C90CEE /* RKPathEntity.swift */,
+				5532CC0425FDC59600C90CEE /* SCNPathNode.swift */,
+			);
+			name = SCNPath;
+			path = ../../Sources/SCNPath;
+			sourceTree = "<group>";
+		};
 		55FC326525FDB134006D333A /* RealityKit Version */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,18 +122,6 @@
 			);
 			path = "RealityKit Version";
 			sourceTree = "<group>";
-		};
-		F38246A9238D28EA003C2D6A /* SCNPath */ = {
-			isa = PBXGroup;
-			children = (
-				55FC326225FDB106006D333A /* RKPathEntity.swift */,
-				F38246AA238D28F8003C2D6A /* SCNGeometry+Extensions.swift */,
-				F38246AB238D28F8003C2D6A /* SCNPathNode.swift */,
-				F38246AC238D28F8003C2D6A /* SCNVector3+Extensions.swift */,
-			);
-			name = SCNPath;
-			path = "SCNPath+Example/SCNPath";
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -156,6 +159,7 @@
 				TargetAttributes = {
 					0046B23621D55F0B0047E83D = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -199,15 +203,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0046B24121D55F0B0047E83D /* ViewController+ARSCNViewDelegate.swift in Sources */,
+				5532CC0525FDC59600C90CEE /* SCNVector3+Extensions.swift in Sources */,
+				5532CC0725FDC59600C90CEE /* SCNGeometry+Extensions.swift in Sources */,
+				5532CC0925FDC59600C90CEE /* SCNPathNode.swift in Sources */,
 				55FC326925FDB134006D333A /* RKViewController.swift in Sources */,
 				0046B23F21D55F0B0047E83D /* ViewController.swift in Sources */,
-				F38246AD238D28F8003C2D6A /* SCNGeometry+Extensions.swift in Sources */,
-				55FC326325FDB106006D333A /* RKPathEntity.swift in Sources */,
+				5532CC0825FDC59600C90CEE /* RKPathEntity.swift in Sources */,
 				55FC326A25FDB134006D333A /* RKViewController+Gestures.swift in Sources */,
-				F38246AF238D28F8003C2D6A /* SCNVector3+Extensions.swift in Sources */,
 				55FC326B25FDB134006D333A /* RKViewController+Occlusions.swift in Sources */,
-				F38246AE238D28F8003C2D6A /* SCNPathNode.swift in Sources */,
 				0046B24F21D55F8E0047E83D /* ViewController+Occlusions.swift in Sources */,
+				5532CC1725FDC93900C90CEE /* ShapesProj.rcproject in Sources */,
 				0046B25021D55F8E0047E83D /* ViewController+Gestures.swift in Sources */,
 				0046B23B21D55F0B0047E83D /* AppDelegate.swift in Sources */,
 			);
@@ -354,9 +359,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -372,9 +376,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
