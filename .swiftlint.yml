@@ -1,9 +1,13 @@
 excluded:
   - Example
   - Pods
+disabled_rules:
+  - todo
 identifier_name:
   min_length:
     warning: 1
+line_length:
+  ignores_comments: true
 function_body_length:
   warning: 60
 cyclomatic_complexity:
