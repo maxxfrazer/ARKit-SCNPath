@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
   name: "SCNPath",
-  platforms: [.iOS("9.3")],
+  platforms: [.iOS(.v13)],
   products: [
     .library(
       name: "SCNPath",
