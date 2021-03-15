@@ -103,7 +103,7 @@ public class SCNPathNode: SCNNode {
 		}
 	}
 
-	private func recalcGeometry() {
+	internal func recalcGeometry() {
 		(self.geometry, self.pathLength) = SCNGeometry.path(
 			path: path, width: self.width,
 			curvePoints: curvePoints, materials: self.materials
